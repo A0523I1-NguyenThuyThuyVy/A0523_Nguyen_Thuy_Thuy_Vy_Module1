@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nhap diem mon hoc</title>
+</head>
+<body>
+<h1>nhap diem mon hoc</h1>
+
+<form>
+    <label for="diemVatLy">Vat ly:</label>
+    <input type="number" step="0.01" id="diemVatLy" required><br>
+
+    <label for="diemHoaHoc">Hoa hoc:</label>
+    <input type="number" step="0.01" id="diemHoaHoc" required><br>
+
+    <label for="diemSinhHoc">Sinh hoc:</label>
+    <input type="number" step="0.01" id="diemSinhHoc" required><br>
+
+    <button onclick="tinhDiemTrungBinh()">Tinh diem trung binh</button>
+</form>
+
+<h2>Ket qua:</h2>
+<p>Diem trung binh: <span id="diemTrungBinh"></span></p>
+<p>Tong diem: <span id="tongDiem"></span></p>
+
+<script>
+    function tinhDiemTrungBinh() {
+        var diemVatLy = parseFloat(document.getElementById("diemVatLy").value);
+        var diemHoaHoc = parseFloat(document.getElementById("diemHoaHoc").value);
+        var diemSinhHoc = parseFloat(document.getElementById("diemSinhHoc").value);
+
+        var diemTrungBinh = (diemVatLy + diemHoaHoc + diemSinhHoc) / 3;
+        var tongDiem = diemVatLy + diemHoaHoc + diemSinhHoc;
+
+        document.getElementById("diemTrungBinh").innerHTML = diemTrungBinh;
+        document.getElementById("tongDiem").innerHTML = tongDiem;
+    }
+</script>
+</body>
+</html>
