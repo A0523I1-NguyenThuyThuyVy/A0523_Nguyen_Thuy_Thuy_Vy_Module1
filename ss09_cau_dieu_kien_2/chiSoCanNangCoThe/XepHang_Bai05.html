@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xep Hang Hoc Luc</title>
+</head>
+<body>
+<script>
+    let diemKiemTraHeSoMot=parseFloat(prompt("Nhap Diem He So 1:"));
+    let diemKiemTraHeSoHai=parseFloat(prompt("Nhap Diem He So 2:"));
+    let diemKiemTraHeSoBa=parseFloat(prompt("Nhap Diem He So 3:"));
+    let diemTrungBinh=(diemKiemTraHeSoMot+diemKiemTraHeSoHai*2+diemKiemTraHeSoBa*3)/6;
+    if(diemTrungBinh>=8.0){
+        document.write("Hoc Sinh Gioi:"+diemTrungBinh);
+    }else if(diemTrungBinh>=6.5){
+        document.write("Hoc Sinh Kha:"+diemTrungBinh);
+    }else if(diemTrungBinh>=4.0){
+        document.write("Hoc Sinh Trung Binh :"+diemTrungBinh);
+    }else{document.write("Hoc Sinh Kem :"+diemTrungBinh);
+    }
+</script>
+</body>
+</html>

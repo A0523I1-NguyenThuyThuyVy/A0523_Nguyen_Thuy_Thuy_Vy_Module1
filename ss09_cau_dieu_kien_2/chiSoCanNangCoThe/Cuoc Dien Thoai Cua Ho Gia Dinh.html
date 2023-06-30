@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuoc Dien Thoai Cua Ho Gia Dinh</title>
+</head>
+<body>
+    <script>
+
+        let soPhut=parseFloat(prompt("So Phut Goi Trong Thang la"));
+        let phi;
+        if(soPhut>200){
+            phi=(soPhut-200)*200+150*400+50*600;
+            document.write("Cuoc dien thoai la:"+phi);
+        }else if(soPhut>50){
+            phi=(soPhut-50)*400+50*600;
+            document.write("Cuoc dien thoai la:"+phi);
+        }else{
+            phi=soPhut*600;
+            document.write("Cuoc dien thoai la:"+phi);
+        }
+    </script>
+</body>
+</html>
