@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Chuyen doi tien te</h1>
+    <form>
+        <label for="amount">So tien:</label>
+        <input type="number" step="0.01" id="amount" required>
+
+        <label for="sourceCurrency">Đồng tiền nguồn:</label>
+        <select id="sourceCurrency">
+            <select value  ="USD">USD - Đô la Mỹ</>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - Bảng Anh</option>
+            <option value="VND">VND - Đồng</option>
+        </select>
+
+        <label for="targetCurrency">Đồng tiền đích:</label>
+        <select id="targetCurrency">
+            <option value="USD">USD - Đô la Mỹ</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - Bảng Anh</option>
+            <option value="VND">VND - Đồng</option>
+        </select>
+
+        <button type="button" onclick="convertCurrency()">Chuyển đổi</button>
+    </form>
+
+    <h2>Kết quả:</h2>
+    <p id="convertedAmount"></p>
+</div>
+
+<script>
+    function convertCurrency() {
+        var amount = parseFloat(document.getElementById("amount").value);
+        var sourceCurrency = document.getElementById("sourceCurrency").value;
+        var targetCurrency = document.getElementById("targetCurrency").value;
+        var convertCurrency = document.getElementById("convertCurrency").value;
+
+        // Tỉ giá chuyển đổi (ví dụ)
+        var exchangeRate = {
+            USD: {
+                EUR: 0.82,
+                GBP: 0.72,
+                VND: 0.23
+            },
+            EUR: {
+                USD: 1.22,
+                GBP: 0.88,
+                VND: 0.25
+            },
+            GBP: {
+                USD: 1.39,
+                EUR: 1.14,
+                VND: 0.30
+            }
+            VND: {
+                USD: 0.43,
+                EUR: 0.39,
+                GBP: 0.33
+            }
+        };
+
+        var convertedAmount = amount * exchangeRate[sourceCurrency][targetCurrency];
+        document.getElementById("convertedAmount").innerText = convertedAmount.toFixed(2) + " " + targetCurrency;
+    }
+</script>
+</body>
+</html>
