@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Array Join</title>
+</head>
+<body>
+<script>
+    //Bai1:
+    document.writeln("<br>"+ "Bài 1: </br>");
+    let myColor=["Red","Green","White","Black"];
+    document.writeln(myColor.toString(""));
+
+    //Bai2:
+    document.writeln("<br>" + "Bài 2: </br>");
+    const num=window.prompt("Enter Number");
+    const str=num.toString();
+    const result=[str[0]];
+    for(let x=1; x<str.length; x++)
+    {
+        if((str[x-1]%2 === 0)&&(str[x]%2 === 0))
+        {
+            result.push('-', str[x]);
+        }
+        else
+        {
+            result.push(str[x]);
+        }
+    } document.writeln(result.join(''));
+
+    //Bai3:
+    document.writeln("<br>" + "Bài 3: </br>");
+    var str = 'c';
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    const result = [];
+    for(let x=0; x<str.length; x++)
+    {
+        if(UPPER.includes(str[x]))
+        {
+            result.push(str[x].toLowerCase());
+        }
+        else if(LOWER.includes(str[x]))
+        {
+            result.push(str[x].toUpperCase());
+        }
+        else
+        {
+            result.push(str[x]);
+        }
+    }
+    console.log(result.join(''));
+
+
+</script>
+</body>
+</html>
