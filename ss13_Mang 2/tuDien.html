@@ -2,11 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dictionary</title>
+    <title>Title</title>
 </head>
 <body>
-   <form>
-       
-   </form>
+
+<form>
+
+    <input type="text" id="tim">
+    <button type="button" onclick="search()">Tìm</button>
+</form>
+</br>
+
+
+<script>
+    function search() {
+        let arr1 = Array('book','table','read','milk','talk','smile');
+        let arr2 = Array('sách','bàn','đọc','sữa','nói chuyện','cười');
+        let search = document.getElementById("tim").value;
+
+        for(let i =0;i< arr1.length;i++){
+            if(search == arr1[i]){
+                document.writeln(arr2[i]);
+                break
+            }
+            else if(i == arr1.length -1){
+                alert("ko tìm thấy");
+                break;
+            }
+        }
+
+    }
+</script>
+
 </body>
 </html>
